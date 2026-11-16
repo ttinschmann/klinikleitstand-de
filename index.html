@@ -7,10 +7,10 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Der Leitstand für das Krankenhaus: vorausschauen statt reagieren. Zwei Dienstage im Klinikum Musterstadt: einmal auf Zuruf, einmal mit Leitstand.">
 <style>
-@font-face{font-family:"IBM Plex Sans";font-weight:400;font-display:swap;src:url(plex-sans-400.woff2) format("woff2")}
-@font-face{font-family:"IBM Plex Sans";font-weight:500;font-display:swap;src:url(plex-sans-500.woff2) format("woff2")}
-@font-face{font-family:"IBM Plex Sans";font-weight:600;font-display:swap;src:url(plex-sans-600.woff2) format("woff2")}
-@font-face{font-family:"IBM Plex Mono";font-weight:500;font-display:swap;src:url(plex-mono-500.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-weight:400;font-display:swap;src:url(fonts/plex-sans-400.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-weight:500;font-display:swap;src:url(fonts/plex-sans-500.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-weight:600;font-display:swap;src:url(fonts/plex-sans-600.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;font-display:swap;src:url(fonts/plex-mono-500.woff2) format("woff2")}
 
 :root{
   /* Layout: Szene füllt den Bildschirm, Text und Regler liegen unten auf einem Verlauf */
@@ -199,12 +199,12 @@ footer .in{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 24
   <div class="eyebrow">Vorbilder</div>
   <h2>Wo viel auf dem Spiel steht, sieht immer jemand das Ganze.</h2>
   <div class="gal">
-    <figure><img src="still1.jpg" alt="Lotsin im Tower, draußen die Anflugbefeuerung" loading="lazy" width="1120" height="630"><figcaption><b>Kein Verkehrsflughafen arbeitet ohne Tower.</b></figcaption></figure>
-    <figure><img src="still2.jpg" alt="Betriebszentrale mit großer Wand voller Streckenlinien" loading="lazy" width="1120" height="630"><figcaption><b>Kein Bahnnetz ohne Betriebszentrale.</b></figcaption></figure>
-    <figure><img src="still3.jpg" alt="Netzleitstelle, ein Mensch vor der Netzkarte" loading="lazy" width="1120" height="630"><figcaption><b>Kein Stromnetz ohne Netzleitstelle.</b></figcaption></figure>
+    <figure><img src="img/still1.jpg" alt="Lotsin im Tower, draußen die Anflugbefeuerung" loading="lazy" width="1120" height="630"><figcaption><b>Kein Verkehrsflughafen arbeitet ohne Tower.</b></figcaption></figure>
+    <figure><img src="img/still2.jpg" alt="Betriebszentrale mit großer Wand voller Streckenlinien" loading="lazy" width="1120" height="630"><figcaption><b>Kein Bahnnetz ohne Betriebszentrale.</b></figcaption></figure>
+    <figure><img src="img/still3.jpg" alt="Netzleitstelle, ein Mensch vor der Netzkarte" loading="lazy" width="1120" height="630"><figcaption><b>Kein Stromnetz ohne Netzleitstelle.</b></figcaption></figure>
   </div>
   <div class="split">
-    <figure><img src="still4.jpg" alt="Koordinatorin am Telefon vor einer Magnettafel" loading="lazy" width="1120" height="630"></figure>
+    <figure><img src="img/still4.jpg" alt="Koordinatorin am Telefon vor einer Magnettafel" loading="lazy" width="1120" height="630"></figure>
     <div style="display:flex;flex-direction:column;gap:12px">
       <h3 style="margin:0;font-size:26px;line-height:1.2;font-weight:600">Und im Krankenhaus?</h3>
       <p class="lead">Sechshundert Betten, zehn OP-Säle, eine Notaufnahme, die nie schließt. Gesteuert auf Zuruf.</p>
@@ -215,7 +215,7 @@ footer .in{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 24
 <section class="sec" id="film">
   <div class="eyebrow">Der Film</div>
   <h2>Flughafen ohne Tower, in neunzig Sekunden.</h2>
-  <video controls preload="none" playsinline poster="still5.jpg" width="1280" height="720">Ihr Browser kann das Video nicht abspielen.</video>
+  <video controls preload="none" playsinline poster="img/still5.jpg" width="1280" height="720"><source src="film.mp4" type="video/mp4">Ihr Browser kann das Video nicht abspielen.</video>
 </section>
 
 <section class="sec" id="cockpit">
@@ -227,7 +227,7 @@ footer .in{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 24
       <a class="btn" href="https://www.wmc-platform.com" rel="noopener">Cockpit öffnen</a>
       <p class="note">Das Modell liegt hinter einer Anmeldung. Die Zugangsdaten erhalten Sie von uns.</p>
     </div>
-    <figure><img src="still6.jpg" alt="Ausschnitt aus dem Steuerungscockpit mit Hausstatus und Bereichsleiste" loading="lazy" width="1120" height="630"></figure>
+    <figure><img src="img/still6.jpg" alt="Ausschnitt aus dem Steuerungscockpit mit Hausstatus und Bereichsleiste" loading="lazy" width="1120" height="630"></figure>
   </div>
 </section>
 
@@ -771,9 +771,5 @@ requestAnimationFrame(loop);
 })();
 
 </script>
-<script>(function(){const v=document.querySelector("#film video");if(!v)return;let st=0;
-function load(){if(st)return;st=1;Promise.all(["film-1.bin","film-2.bin","film-3.bin"].map(u=>fetch(u).then(r=>{if(!r.ok)throw 0;return r.arrayBuffer();}))).then(a=>{v.src=URL.createObjectURL(new Blob(a,{type:"video/mp4"}));}).catch(()=>{st=0;});}
-if("IntersectionObserver" in window){new IntersectionObserver((e,o)=>{if(e.some(x=>x.isIntersecting)){load();o.disconnect();}},{rootMargin:"150% 0px"}).observe(v);}else load();
-v.addEventListener("pointerdown",load);})();</script>
 </body>
 </html>
